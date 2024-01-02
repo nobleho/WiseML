@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="http://localhost:4455/favicon.ico">
+    <title>WiseML</title>
+    <link rel="fluid-icon" href="http://localhost:4455/logo.ico" title="WiseML">
+    <link rel="mask-icon" href="http://localhost:4455/logo.svg" color="#000000">
+</head>
+<body contenteditable="true">
+    <div style="text-align: center" width="100%" contenteditable="true">{bodycontent}</div>
+    <!--WiseML>
+        <section id="id1" class="WiseMLClass">
+        Hidden content for WiseML...
+        <wsdiv class="wsml-code">
+    </WiseML-->
+
+    <div id="myDiv" style="height: 100px; width: 150px; border: 2px solid black; padding-top: 50px">
+Resize Me!
+</div>
+
+<pre>
+    const myBody = document.body.innerHTML;
+
+    wsml = [];
+    ws = { "id" : "id0", "content" : " "};
+    wsml.push(ws);
+    ws = { "id" : "id1", "content" : " "};
+    wsml.push(ws);
+    console.log(wsml);
+</pre>
+    <!--WiseML>
+        </wsdiv>
+        Hidden content for WiseML...
+        </section>
+    </WiseML-->
+
+      <!--WiseML>
+      <br>
+        <section id="id0" class="WiseMLClass">
+        Hidden content for WiseML...
+        </section>
+    </WiseML-->
+</body>
+<script>
+
+    let myBody = document.body.innerHTML;
+    const isDoc = false;
+    wsml = [];
+    ws = { "id" : "id0", "content" : " "};
+    wsml.push(ws);
+    ws = { "id" : "id1", "content" : " "};
+    wsml.push(ws);
+    console.log(wsml);
+
+     var wsmls = document.querySelectorAll(".WiseMLClass");
+        for (var i = 0; i < wsmls.length; i++) {
+            var str = wsmls[i];
+                console.log(str);
+        }
+
+        if(isDoc){
+            myBody = myBody.replaceAll("<!--WiseML>","")
+            myBody = myBody.replaceAll("</WiseML-->","");
+       
+            document.body.innerHTML = myBody;
+        myBody = "";
+        for (var i = 0; i < wsml.length; i++) {
+            var str = document.getElementById(wsml[i].id);
+            console.log(i + " " + wsml[i].id + " " +str);
+            myBody = myBody + str.innerHTML + wsml[i].id + "<br>";
+        }
+        document.body.innerHTML = myBody;
+         }
+
+var elem = document.getElementById("myDiv");
+elem.style.resize = 'both';
+elem.style.overflow = 'auto';
+
+</script>
+<style>
+.notshow {
+    display: none;
+}
+
+.wsml-div {
+    display: block;
+}
+
+.wsml-code {
+    display: block;
+    color: blue;
+}
+
+.wsml-note {
+    display:inline-block;
+    color: red;
+}
+</style>
+</html>

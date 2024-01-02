@@ -11,9 +11,8 @@ app.use('/static', express.static(__dirname + '/app/public'));
 
 app.get('/:route', async function (req, res) {
   let result = "";
-
   let router = req.params.route || "index";
-  var data = fsu.readFile("app/html/" + router + ".html.htpl");
+  var data = fsu.readFile("app/html/" + router + ".html");
   result = data;
   contentData.forEach(element => {
     result = result.replaceAll(element.var, element.val)
@@ -26,7 +25,7 @@ app.get('/:route', async function (req, res) {
 app.get('/', function (req, res) {
   let result = "";
   let router = "index";
-  var data = fsu.readFile("app/html/" + router + ".html.htpl");
+  var data = fsu.readFile("app/html/" + router + ".html");
   result = data;
   contentData.forEach(element => {
     result = result.replaceAll(element.var, element.val)
