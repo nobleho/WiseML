@@ -1,7 +1,7 @@
 {
   "author": "Noble H.",
   "bin": {
-    "tinygreen": "./index.js"
+    "wiseml": "./index.js"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
