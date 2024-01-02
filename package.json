@@ -1,0 +1,28 @@
+{
+    "name": "WiseML",
+    "version": "1.0.0",
+    "description": "Wise makeup language Publisher",
+    "main": "bin/server2.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon ./bin/server2.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "dayjs": "^1.8.20",
+        "exceljs": "^4.4.0",
+        "express": "^4.18.2",
+        "fs": "^0.0.1-security",
+        "fs-extra": "^11.1.1",
+        "mysql2": "^3.6.5",
+        "nodemon": "^3.0.2",
+        "papaparse": "^5.4.1",
+        "readline": "^1.3.0",
+        "table": "^6.8.1",
+        "treeify": "^1.1.0",
+        "typy": "^3.3.0",
+        "yaml": "^2.2.1"
+    }
+}
